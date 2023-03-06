@@ -1,0 +1,30 @@
+---
+format: gfm
+---
+
+# Consume
+
+## Consumer Spending and Economic Monitoring Engine
+
+An R Shiny application built by team Iceland as part of the European Big Data Hackathon.
+
+* [Link to the shiny app](https://bggj.shinyapps.io/consume/)
+
+
+::: {layout-ncol=2}
+
+![](www/ec_logo.svg){width="50%"}
+
+![](www/hi_logo_blue.svg){width="30%"}
+
+:::
+
+![](www/fable_logo.svg){width="70%" fig-align="center"}
+
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
+<!-- badges: start -->
+<!-- badges: end -->
