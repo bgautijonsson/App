@@ -84,15 +84,35 @@ country_server <- function(id) {
                 plot_dat |>
                     ggplot(aes(txn_date, 1 + err)) +
                     geom_hline(yintercept = 1, lty = 2, linewidth = 0.5, alpha = 0.5) +
-                    geom_line(
-                        data = plot_dat |>
-                            rename(gr = group_val),
-                        aes(group = gr),
-                        col = "grey60",
-                        linewidth = 0.5,
-                        alpha = 0.5
+                    # geom_line(
+                    #     data = plot_dat |>
+                    #         rename(gr = group_val),
+                    #     aes(group = gr),
+                    #     col = "grey60",
+                    #     size = 0.5,
+                    #     alpha = 0.5,
+                    #     lty = 2,
+                    #     position = position_dodge(width = 1)
+                    # ) +
+                    # geom_point(
+                    #     data = plot_dat |>
+                    #         rename(gr = group_val),
+                    #     aes(group = gr),
+                    #     col = "grey60",
+                    #     size = 0.5,
+                    #     alpha = 0.5
+                    # ) +
+                    geom_segment(
+                        aes(
+                            group = group_val,
+                            col = group_val,
+                            yend = 1,
+                            xend = txn_date
+                            ),
+                        lty = 2,
+                        linewidth = 0.7
                     ) +
-                    geom_line(aes(group = group_val, col = group_val), linewidth = 1.5) +
+                    geom_point(aes(group = group_val, col = group_val), size = 1.7) +
                     scale_x_date(
                         labels = label_date_short()
                     ) +
@@ -100,7 +120,7 @@ country_server <- function(id) {
                         labels = function(x) percent(x - 1),
                         trans = "log10",
                         breaks = breaks_log(7),
-                        expand = expansion()
+                        expand = expansion(mult = 0.03)
                     ) +
                     scale_colour_brewer(
                         palette = "Set1"

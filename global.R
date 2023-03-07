@@ -12,6 +12,9 @@ library(leaflegend)
 library(scales)
 library(plotly)
 library(arrow)
+library(metill)
+
+shinyOptions(plot.autocolor = TRUE)
 
 # DATA --------------------------------------------------------------------
 nuts2 <- read_parquet("Data/nuts2.parquet")
@@ -52,25 +55,25 @@ sf_centroid_coords <- de_sf |>
 
 
 # THEME -------------------------------------------------------------------
-theme_set(theme_classic())
-shinyOptions(plot.autocolor = TRUE)
+theme_set(theme_metill())
+
+
 
 bs_global_theme(
     bootswatch = "flatly"
 )
 
-
 bs_global_add_variables(
-    primary = "#08306b",
-    secondary = "#737373",
-    success = "#737373",
+    primary = "#484D6D",
+    secondary = "#969696",
+    success = "#969696",
     # danger = "#FF8CC6",
     # info = "#FF8CC6",
-    light = "#ffffff",
-    dark = "#08306b",
-    bg = "#ffffff",
-    fg = "#ece7f2",
-    "body-bg" = "#ffffff",
+    light = "#faf9f9",
+    dark = "#484D6D",
+    bg = "#faf9f9",
+    fg = "#737373",
+    "body-bg" = "#faf9f9",
     base_font = "Lato",
     heading_font = "Segoe UI",
     "navbar-brand-font-family" = "Playfair Display",

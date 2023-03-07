@@ -22,8 +22,10 @@ fp_ui <- function(id) {
                 class = "center", align = "middle"
             ),
             HTML(sidebar_info),
+            img(src = "hagstofa.png", width = "100%"),
             img(src = "ec_logo.svg", width = "100%"),
-            img(src = "fable_logo.svg", width = "100%")
+            img(src = "fable_logo.svg", width = "100%"),
+            img(src = "hi.png", width = "100%")
         ),
 
         # MAIN PANEL --------------------------------------------------------------
